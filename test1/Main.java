@@ -3,15 +3,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Goods g1 = new Goods();
-        g1.name = "Apple";
-        g1.price = 100;
-        g1.qty = 50;
+        g1.setName("Apple");
+        g1.setPrice(100);
+        g1.setQty(8);
+        //g1.name = "Apple";
+        //g1.price = 100;
+        //g1.qty = 50;
         Goods[] shopCar = new Goods[100];
         //int[] aaa = new int[]{1,2,3,4,5};
 
         /*Goods g2 = g1;
         g2.price = 111;
         System.out.println(g2.toString());*/
+        Goods g99 = new Goods("banana",100,9);
 
         while (true) {
             Scanner sc = new Scanner(System.in);
@@ -39,7 +43,7 @@ public class Main {
         for (int i = 0; i < shopCar.length; i++) {
             Goods g = shopCar[i];
             if(g != null){
-                money = g.price *g.qty;
+                money = g.getPrice()*g.getQty();
             }else{
                 break;
             }
@@ -52,10 +56,10 @@ public class Main {
         String updateName = sc.next();
         for (int i = 0; i < shopCar.length; i++) {
             Goods g = shopCar[i];
-            if(updateName.equals(g.name)){//don't updateName == g.name
+            if(updateName.equals(g.getName())){//do not updateName == g.name
                 System.out.println("input the new price");
                 int newPrice = sc.nextInt();
-                g.price = newPrice;
+                g.setPrice(newPrice);
                 System.out.println("update complete");
                 queryGoods(shopCar);
                 break;
@@ -85,9 +89,9 @@ public class Main {
         int qty = sc.nextInt();
 
         Goods g1 = new Goods();
-        g1.name = name;
-        g1.price = price;
-        g1.qty = qty;
+        g1.setName(name);
+        g1.setPrice(price);
+        g1.setQty(qty);
 
         for (int i = 0; i < shopCar.length; i++) {
             if(shopCar[i]==null){
