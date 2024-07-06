@@ -6,7 +6,7 @@ public class Main {
         g1.name = "Apple";
         g1.price = 100;
         g1.qty = 50;
-        Goods[] shopCar = new Goods[100];//100樣物品
+        Goods[] shopCar = new Goods[100];
         //int[] aaa = new int[]{1,2,3,4,5};
 
         /*Goods g2 = g1;
@@ -52,7 +52,7 @@ public class Main {
         String updateName = sc.next();
         for (int i = 0; i < shopCar.length; i++) {
             Goods g = shopCar[i];
-            if(updateName.equals(g.name)){//別用updateName == g.name去比較[因為等號會變成比較地址而非內容]
+            if(updateName.equals(g.name)){//don't updateName == g.name
                 System.out.println("input the new price");
                 int newPrice = sc.nextInt();
                 g.price = newPrice;
